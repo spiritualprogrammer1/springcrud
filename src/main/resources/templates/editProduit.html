@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/th/thymeleaf/layout"
+      layout:decorate="layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div layout:fragment="content1">
+    <form th:action="@{/save}" method="post">
+        <div class="form-group">
+            <label for="" class="control-label">ID: <label for="" th:text="${produit.id}" ></label> </label>
+
+        </div>
+        <div class="form-group">
+            <label for="" class="control-label">Designation:</label>
+            <input type="text" class="form-control" name="designation" th:value="${produit.designation}">
+        </div>
+        <span class="text-danger" th:errors="${produit.designation}"> </span>
+        <div class="form-group">
+            <label for="" class="control-label">Prix:</label>
+            <input type="text" class="form-control" name="prix" th:value="${produit.prix}">
+        </div>
+        <span class="text-danger" th:errors="${produit.prix}"> </span>
+        <div class="form-group">
+            <label for="" class="control-label">Quantite:</label>
+            <input type="text" class="form-control" name="quantite" th:value="${produit.quantite}">
+        </div>
+        <span class="text-danger"  th:errors="${produit.quantite}"> </span>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+</body>
+</html>
